@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sui Transaction Explainer</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+    <header>
+      <div>
+        <p class="eyebrow">Sui Transaction Explainer</p>
+        <h1>Understand what really happened</h1>
+        <p class="lede">Paste a transaction digest to fetch details from the Sui RPC and translate the effects into human-readable summaries.</p>
+      </div>
+    </header>
+
+    <section class="card">
+      <form id="lookup-form">
+        <label class="field">
+          <span>Transaction digest</span>
+          <input id="digest-input" name="digest" type="text" placeholder="E.g., 5fGi..." required />
+        </label>
+
+        <details class="advanced">
+          <summary>Advanced options</summary>
+          <label class="field">
+            <span>RPC endpoint</span>
+            <input id="endpoint-input" name="endpoint" type="url" value="https://sui-mainnet.gateway.tatum.io/" required />
+          </label>
+          <label class="field">
+            <span>API key</span>
+            <input id="api-key-input" name="apiKey" type="text" value="t-66a730ccccfd17001c479705-2f597d14ad7543f289a03418" />
+          </label>
+        </details>
+
+        <button type="submit" id="submit-button">Explain transaction</button>
+      </form>
+
+      <div id="status" role="status" aria-live="polite"></div>
+      <div id="results" class="results" hidden></div>
+    </section>
+
+    <section class="card" id="how-it-works">
+      <h2>What you get</h2>
+      <ul>
+        <li>High-level status (success/failure) and sender.</li>
+        <li>Gas usage and balance changes.</li>
+        <li>Object and coin movements summarized in plain English.</li>
+        <li>Raw JSON for debugging when needed.</li>
+      </ul>
+    </section>
+  </main>
+
+  <script src="main.js"></script>
+</body>
+</html>

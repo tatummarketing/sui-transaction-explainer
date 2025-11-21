@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <main class="app">
+  <main class="app" data-tds-root="true">
     <header>
       <div>
         <p class="eyebrow">Sui Transaction Explainer</p>
@@ -18,22 +18,24 @@
 
     <section class="card">
       <form id="lookup-form">
+        <div class="api-key-container" id="api-key-container">
+          <div class="api-key-field field">
+            <div class="field-header">
+              <span>API key</span>
+              <a class="api-key-link" href="https://dashboard.tatum.io" target="_blank" rel="noreferrer">Get API key ↗</a>
+            </div>
+            <input id="api-key-input" name="apiKey" type="text" autocomplete="off" />
+          </div>
+          <div class="api-key-saved" id="api-key-saved" aria-hidden="true">
+            <span>API key stored for this session.</span>
+            <button type="button" class="api-key-edit" id="api-key-edit">Change</button>
+          </div>
+        </div>
+
         <label class="field">
           <span>Transaction digest</span>
           <input id="digest-input" name="digest" type="text" placeholder="E.g., 5fGi..." required />
         </label>
-
-        <details class="advanced">
-          <summary>Advanced options</summary>
-          <label class="field">
-            <span>RPC endpoint</span>
-            <input id="endpoint-input" name="endpoint" type="url" value="https://sui-mainnet.gateway.tatum.io/" required />
-          </label>
-          <label class="field">
-            <span>API key</span>
-            <input id="api-key-input" name="apiKey" type="text" value="t-66a730ccccfd17001c479705-2f597d14ad7543f289a03418" />
-          </label>
-        </details>
 
         <button type="submit" id="submit-button">Explain transaction</button>
       </form>

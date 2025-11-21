@@ -2,17 +2,6 @@
 
 A lightweight, client-side web page that takes a Sui transaction digest (hash), calls the Sui RPC, and summarizes what happened in human-readable terms.
 
-## Getting started
-
-1. Serve the static files locally (any static server works). For example:
-   ```bash
-   python -m http.server 8000
-   ```
-2. Open `http://localhost:8000` in your browser.
-3. Paste a transaction digest, optionally adjust the RPC endpoint or API key, and click **Explain transaction**.
-
-> The default endpoint uses the provided Tatum mainnet gateway and API key. You can replace either value in the **Advanced options** panel.
-
 ## What the page shows
 
 - Transaction status, sender, digest, and timestamp.

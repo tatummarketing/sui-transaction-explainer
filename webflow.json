@@ -1,0 +1,14 @@
+{
+  "framework": {
+    "name": "static"
+  },
+  "build": {
+    "command": "",
+    "path": "."
+  },
+  "dev": {
+    "command": "python3 -m http.server 8000",
+    "path": ".",
+    "port": 8000
+  }
+}
